@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>邱奕杭 | Personal Homepage</title>
+    <meta
+      name="description"
+      content="邱奕杭的个人主页：教育背景、项目经历、竞赛经历、技能与联系方式。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#about">邱奕杭</a>
+      <nav>
+        <a href="#about">关于</a>
+        <a href="#education">教育</a>
+        <a href="#projects">项目</a>
+        <a href="#competitions">竞赛</a>
+        <a href="#honors">荣誉</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="about" class="hero section-card reveal">
+        <img src="https://placehold.co/280x340" alt="邱奕杭头像" class="avatar" />
+        <div class="hero-content">
+          <p class="label">Ph.D. Candidate | AI + EDA</p>
+          <h1>邱奕杭</h1>
+          <p class="subtitle">中国科学院大学 · 计算机应用技术博士生</p>
+          <p class="intro">
+            目前研究方向聚焦 AI 与 EDA 结合，具备 EE/CS 跨学科背景。深度参与开源 EDA
+            工具链研发（iEDA、AiEDA），关注从芯片设计流程到数据向量化、模型训练与部署的全链路优化。
+          </p>
+          <ul class="quick-links">
+            <li><a href="mailto:qiuyihang23@mails.ucas.ac.cn">Email</a></li>
+            <li><a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li>
+              <a
+                href="https://scholar.google.com/citations?user=EEawgYkAAAAJ&hl=en"
+                target="_blank"
+                rel="noreferrer"
+                >Google Scholar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="education" class="section-card reveal">
+        <h2>教育背景</h2>
+        <div class="item">
+          <h3>中国科学院大学 · 博士 · 计算机应用技术</h3>
+          <p class="meta">2023.09 - 至今 · 计算机科学与技术学院</p>
+          <p>导师：王伟强、李兴权。</p>
+        </div>
+        <div class="item">
+          <h3>广东工业大学 · 硕士（保研） · 控制科学与工程</h3>
+          <p class="meta">2020.09 - 2023.07 · 自动化学院</p>
+          <p>导师：熊晓明、李兴权。</p>
+        </div>
+        <div class="item">
+          <h3>广东工业大学 · 本科 · 通信工程（IC 创新班）</h3>
+          <p class="meta">2016.09 - 2020.07 · 信息工程学院（集成电路学院）</p>
+          <p>绩点排名第一（1/182，1/60）。</p>
+        </div>
+      </section>
+
+      <section id="projects" class="section-card reveal">
+        <h2>项目经历</h2>
+        <div class="item">
+          <h3>开源 AI 辅助 EDA 工具库 AiEDA</h3>
+          <p class="meta">2024.07 - 至今 · 鹏城实验室课题 · 核心研发人员</p>
+          <ul>
+            <li>
+              面向 AI 辅助 EDA 的“数据鸿沟”问题，基于“设计向量化”概念搭建闭环优化平台。
+            </li>
+            <li>
+              平台覆盖设计流程运行、特征提取、向量化数据生成、模型训练与部署。
+            </li>
+            <li>
+              基于 50 个芯片用例构建开源芯片数据集 iDATA，降低研究者获取和使用芯片数据门槛。
+            </li>
+            <li>
+              开源代码维护者，相关成果投稿/发表于 TCAD 与 DAC，并在 CCF DAC Demo Contest 现场展评中获优秀 Demo。
+            </li>
+          </ul>
+          <p>
+            <a href="https://github.com/OSCC-Project/AiEDA" target="_blank" rel="noreferrer">项目仓库</a>
+          </p>
+        </div>
+        <div class="item">
+          <h3>开源物理设计工具链 iEDA</h3>
+          <p class="meta">2021.10 - 至今 · 鹏城实验室/中科院计算所课题 · 主要研发人员</p>
+          <ul>
+            <li>参与国内首个开源物理设计全流程工具链研发，项目已完成 5 次流片。</li>
+            <li>深度参与功能定义与实现、代码优化与重构。</li>
+            <li>负责 Evaluation 模块开发，支撑流程性能指标快速评估。</li>
+            <li>参与 iPL 模块研发（可布线性驱动布局算法）与 Vectorization 模块开发（版图多层级拆解）。</li>
+            <li>相关成果发表于 ASP-DAC 与 ISEDA。</li>
+          </ul>
+          <p>
+            <a href="https://github.com/OSCC-Project/iEDA" target="_blank" rel="noreferrer">项目仓库</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="competitions" class="section-card reveal">
+        <h2>竞赛经历</h2>
+        <div class="item">
+          <h3>ICCAD Contest Problem B</h3>
+          <p class="meta">2022.06 - 2022.09</p>
+          <p>
+            Die-to-Die 三维芯片布局。前期负责打通数据流，后期实现布局合法化，获 First Place，成果发表于 ICCAD。
+          </p>
+        </div>
+        <div class="item">
+          <h3>EDA 设计精英挑战赛</h3>
+          <p class="meta">2020.08 - 2020.12</p>
+          <p>
+            将 MPW 版图拼接建模为 Floorplan 多目标优化问题，使用 B* 树与快速模拟退火算法求解，获全国二等奖。
+          </p>
+        </div>
+        <div class="item">
+          <h3>美国大学生数学建模竞赛（MCM）</h3>
+          <p class="meta">2018.12 - 2020.03</p>
+          <p>
+            连续两届参赛，主导建模并辅助写作，分别获 Finalists（全球前 1%）与 Meritorious Winners（全球前 6%）。
+          </p>
+        </div>
+        <div class="item">
+          <h3>全国大学生恩智浦杯智能汽车竞赛</h3>
+          <p class="meta">2017.09 - 2018.09</p>
+          <p>
+            搭建无线充电节能直立小车，负责驱动电路板绘制与循迹算法 C 语言实现，获华南赛区三等奖。
+          </p>
+        </div>
+      </section>
+
+      <section id="honors" class="section-card reveal">
+        <h2>荣誉与技能</h2>
+        <div class="item">
+          <h3>荣誉与实践</h3>
+          <ul>
+            <li>国家奖学金（2 次）、创新奖学金、优秀学生干部、校园十佳大学生等。</li>
+            <li>羽毛球院赛男双/混双双亚军。</li>
+            <li>曾任班长、团支书、班主任助理，组织参与多项班级活动。</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>技术能力</h3>
+          <ul>
+            <li>编程语言与开发：C++、Python，具备标准化工程开发经验。</li>
+            <li>工程工具：Linux、Git、CMake、Docker、UV。</li>
+            <li>领域经验：具备 Innovus、iEDA、OpenROAD 全流程实践经验。</li>
+            <li>英语能力：CET-6（524），具备文献阅读、信息检索与学术写作能力。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section-card reveal">
+        <h2>联系方式</h2>
+        <p>Email: <a href="mailto:qiuyihang23@mails.ucas.ac.cn">qiuyihang23@mails.ucas.ac.cn</a></p>
+        <p>GitHub: <a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">@YihangQiu</a></p>
+        <p>
+          Google Scholar:
+          <a href="https://scholar.google.com/citations?user=EEawgYkAAAAJ&hl=en" target="_blank" rel="noreferrer"
+            >EEawgYkAAAAJ</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Yihang Qiu. Last updated: February 11, 2026.</p>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
