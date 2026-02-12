@@ -64,6 +64,27 @@ a:hover {
   color: var(--muted);
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-toggle {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang-toggle:hover {
+  background: #ebf2fa;
+}
+
 .container {
   max-width: 1000px;
   margin: 26px auto 52px;
@@ -237,6 +258,15 @@ footer {
 
   .topbar nav a {
     font-size: 0.88rem;
+  }
+
+  .top-actions {
+    gap: 8px;
+  }
+
+  .lang-toggle {
+    padding: 5px 10px;
+    font-size: 0.78rem;
   }
 
   .section-card {

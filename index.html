@@ -19,14 +19,17 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#about">邱奕杭</a>
-      <nav>
-        <a href="#about">关于</a>
-        <a href="#education">教育</a>
-        <a href="#projects">项目</a>
-        <a href="#competitions">竞赛</a>
-        <a href="#honors">荣誉</a>
-        <a href="#contact">联系</a>
-      </nav>
+      <div class="top-actions">
+        <nav>
+          <a href="#about">关于</a>
+          <a href="#education">教育</a>
+          <a href="#projects">项目</a>
+          <a href="#competitions">竞赛</a>
+          <a href="#honors">荣誉</a>
+          <a href="#contact">联系</a>
+        </nav>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="切换到英文">English</button>
+      </div>
     </header>
 
     <main class="container">
@@ -243,6 +246,353 @@
       );
 
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      const i18nSelectors = {
+        brand: '.brand',
+        nav_about: '.topbar nav a[href="#about"]',
+        nav_education: '.topbar nav a[href="#education"]',
+        nav_projects: '.topbar nav a[href="#projects"]',
+        nav_competitions: '.topbar nav a[href="#competitions"]',
+        nav_honors: '.topbar nav a[href="#honors"]',
+        nav_contact: '.topbar nav a[href="#contact"]',
+        quick_email: '.quick-links li:nth-of-type(1) a',
+        quick_github: '.quick-links li:nth-of-type(2) a',
+        quick_scholar: '.quick-links li:nth-of-type(3) a',
+        label: '.label',
+        subtitle: '.subtitle',
+        intro: '.intro',
+        education_title: '#education > h2',
+        edu1_h3: '#education .item:nth-of-type(1) h3',
+        edu1_meta: '#education .item:nth-of-type(1) .meta',
+        edu1_desc: '#education .item:nth-of-type(1) p:not(.meta)',
+        edu2_h3: '#education .item:nth-of-type(2) h3',
+        edu2_meta: '#education .item:nth-of-type(2) .meta',
+        edu2_desc: '#education .item:nth-of-type(2) p:not(.meta)',
+        edu3_h3: '#education .item:nth-of-type(3) h3',
+        edu3_meta: '#education .item:nth-of-type(3) .meta',
+        edu3_desc: '#education .item:nth-of-type(3) p:not(.meta)',
+        projects_title: '#projects > h2',
+        proj1_h3: '#projects .item:nth-of-type(1) h3',
+        proj1_meta: '#projects .item:nth-of-type(1) .meta',
+        proj1_li1: '#projects .item:nth-of-type(1) li:nth-of-type(1)',
+        proj1_li2: '#projects .item:nth-of-type(1) li:nth-of-type(2)',
+        proj1_li3: '#projects .item:nth-of-type(1) li:nth-of-type(3)',
+        proj1_li4: '#projects .item:nth-of-type(1) li:nth-of-type(4)',
+        proj1_li5: '#projects .item:nth-of-type(1) li:nth-of-type(5)',
+        proj1_links: '#projects .item:nth-of-type(1) > p:last-of-type',
+        proj2_h3: '#projects .item:nth-of-type(2) h3',
+        proj2_meta: '#projects .item:nth-of-type(2) .meta',
+        proj2_li1: '#projects .item:nth-of-type(2) li:nth-of-type(1)',
+        proj2_li2: '#projects .item:nth-of-type(2) li:nth-of-type(2)',
+        proj2_li3: '#projects .item:nth-of-type(2) li:nth-of-type(3)',
+        proj2_li4: '#projects .item:nth-of-type(2) li:nth-of-type(4)',
+        proj2_li5: '#projects .item:nth-of-type(2) li:nth-of-type(5)',
+        proj2_links: '#projects .item:nth-of-type(2) > p:last-of-type',
+        competitions_title: '#competitions > h2',
+        comp1_h3: '#competitions .item:nth-of-type(1) h3',
+        comp1_meta: '#competitions .item:nth-of-type(1) .meta',
+        comp1_desc: '#competitions .item:nth-of-type(1) p:not(.meta)',
+        comp2_h3: '#competitions .item:nth-of-type(2) h3',
+        comp2_meta: '#competitions .item:nth-of-type(2) .meta',
+        comp2_desc: '#competitions .item:nth-of-type(2) p:not(.meta)',
+        comp3_h3: '#competitions .item:nth-of-type(3) h3',
+        comp3_meta: '#competitions .item:nth-of-type(3) .meta',
+        comp3_desc: '#competitions .item:nth-of-type(3) p:not(.meta)',
+        comp4_h3: '#competitions .item:nth-of-type(4) h3',
+        comp4_meta: '#competitions .item:nth-of-type(4) .meta',
+        comp4_desc: '#competitions .item:nth-of-type(4) p:not(.meta)',
+        comp5_h3: '#competitions .item:nth-of-type(5) h3',
+        comp5_meta: '#competitions .item:nth-of-type(5) .meta',
+        comp5_desc: '#competitions .item:nth-of-type(5) p:not(.meta)',
+        comp6_h3: '#competitions .item:nth-of-type(6) h3',
+        comp6_meta: '#competitions .item:nth-of-type(6) .meta',
+        comp6_desc: '#competitions .item:nth-of-type(6) p:not(.meta)',
+        honors_title: '#honors > h2',
+        honors_practice_h3: '#honors .item:nth-of-type(1) h3',
+        honors_practice_li1: '#honors .item:nth-of-type(1) li:nth-of-type(1)',
+        honors_practice_li2: '#honors .item:nth-of-type(1) li:nth-of-type(2)',
+        honors_practice_li3: '#honors .item:nth-of-type(1) li:nth-of-type(3)',
+        honors_practice_li4: '#honors .item:nth-of-type(1) li:nth-of-type(4)',
+        honors_skills_h3: '#honors .item:nth-of-type(2) h3',
+        honors_skills_li1: '#honors .item:nth-of-type(2) li:nth-of-type(1)',
+        honors_skills_li2: '#honors .item:nth-of-type(2) li:nth-of-type(2)',
+        honors_skills_li3: '#honors .item:nth-of-type(2) li:nth-of-type(3)',
+        honors_skills_li4: '#honors .item:nth-of-type(2) li:nth-of-type(4)',
+        contact_title: '#contact > h2',
+        contact_p1: '#contact p:nth-of-type(1)',
+        contact_p2: '#contact p:nth-of-type(2)',
+        contact_p3: '#contact p:nth-of-type(3)',
+        contact_p4: '#contact p:nth-of-type(4)',
+        footer_text: 'footer p'
+      };
+
+      const altSelectors = {
+        avatar_alt: '#about .avatar',
+        proj1_fig1_alt: '#projects .item:nth-of-type(1) figure:nth-of-type(1) img',
+        proj1_fig2_alt: '#projects .item:nth-of-type(1) figure:nth-of-type(2) img',
+        proj2_fig1_alt: '#projects .item:nth-of-type(2) figure:nth-of-type(1) img'
+      };
+
+      const translations = {
+        zh: {
+          page_title: '邱奕杭 | 个人主页',
+          page_description: '邱奕杭的个人主页：教育背景、项目经历、竞赛经历、技能与联系方式。',
+          brand: '邱奕杭',
+          nav_about: '关于',
+          nav_education: '教育',
+          nav_projects: '项目',
+          nav_competitions: '竞赛',
+          nav_honors: '荣誉',
+          nav_contact: '联系',
+          quick_email: 'Email',
+          quick_github: 'GitHub',
+          quick_scholar: 'Google Scholar',
+          label: 'Ph.D. Candidate | AI + EDA',
+          subtitle: '中国科学院大学 · 计算机应用技术博士生',
+          intro: '目前研究方向聚焦 AI（传统小模型、大语言模型与智能体）与 EDA 的深度融合，具备 EE/CS 跨学科背景，长期围绕“如何让算法真正服务芯片设计流程”开展研究与工程实践。科研偏好是做“基础的、重要的、有影响力”的工作，认可“科研重工业模式”，即有价值的科研应建立在长期、扎实的工程积淀之上。工作风格上推崇开源，注重框架性工作和基础设施构建，强调研究的可落地、可复现、可扩展。研究兴趣聚焦物理设计阶段，涵盖经典布局算法优化、AI 辅助物理设计、物理设计分析方法学等方向，并在 iEDA、AiEDA 等开源项目中持续推进从流程运行、数据提取、设计向量化到模型训练与闭环验证的全链路优化。',
+          education_title: '教育背景',
+          edu1_h3: '中国科学院大学 · 博士 · 计算机应用技术',
+          edu1_meta: '2023.09 - 至今 · 计算机科学与技术学院',
+          edu1_desc: '核心课题：集成电路物理设计语义建模与向量驱动优化研究。导师：王伟强。',
+          edu2_h3: '广东工业大学 · 硕士（保研） · 控制科学与工程',
+          edu2_meta: '2020.09 - 2023.07 · 自动化学院',
+          edu2_desc: '核心课题：面向 VLSI 可布线性布局优化算法研究。导师：熊晓明。',
+          edu3_h3: '广东工业大学 · 本科 · 通信工程（广工 IC 班）',
+          edu3_meta: '2016.09 - 2020.07 · 信息工程学院（集成电路学院）',
+          edu3_desc:
+            '核心课程：算法与数据结构、计算机体系结构、信息论、通信原理、数字集成电路设计、模拟集成电路设计、信号与系统等。绩点分别在通信工程专业排名第一（1/182）与 IC 班排名第一（1/60）。',
+          projects_title: '项目经历',
+          proj1_h3: '开源 AI 辅助 EDA 工具库 AiEDA',
+          proj1_meta: '2024.07 - 至今 · 鹏城实验室课题 · 核心研发人员',
+          proj1_li1: '面向 AI 辅助 EDA 的“数据鸿沟”问题，基于“设计向量化”概念搭建闭环优化平台。',
+          proj1_li2: '平台覆盖设计流程运行、特征提取、向量化数据生成、模型训练与部署。',
+          proj1_li3: '基于 50 个芯片用例构建开源芯片数据集 iDATA，降低研究者获取与使用芯片数据的门槛。',
+          proj1_li4: '开源代码维护者，相关论文成果《AiEDA: An Open-Source AI-Aided Design Library for Design-to-Vector》被 EDA 领域顶刊 TCAD 收录。',
+          proj1_li5: '在 CCF DAC Demo Contest 现场展评中获优秀 Demo。',
+          proj1_links:
+            '<a href="https://github.com/OSCC-Project/AiEDA" target="_blank" rel="noreferrer">代码仓库 AiEDA</a> · <a href="https://huggingface.co/datasets/AiEDA/iDATA" target="_blank" rel="noreferrer">数据集 iDATA</a> · <a href="https://ieeexplore.ieee.org/document/11244094" target="_blank" rel="noreferrer">论文 AiEDA</a>',
+          proj2_h3: '开源物理设计工具链 iEDA',
+          proj2_meta: '2021.10 - 2025.12 · 鹏城实验室/中国科学院计算所课题 · 主要研发人员',
+          proj2_li1: '参与国内首个开源物理设计全流程工具链研发，项目已完成 4 次及以上流片。',
+          proj2_li2: '深度参与功能定义与实现、代码优化与重构。',
+          proj2_li3: '负责 Evaluation 模块开发，支撑流程性能指标快速评估。',
+          proj2_li4: '参与 iPL 模块研发（可布线性驱动布局算法）与 Vectorization 模块开发（版图多层级拆解）。',
+          proj2_li5: 'iEDA 小组论文《iEDA: An Open-Source Intelligent Physical Implementation Toolkit and Library》获 2023 ISEDA 最佳论文奖。',
+          proj2_links:
+            '<a href="https://github.com/OSCC-Project/iEDA" target="_blank" rel="noreferrer">代码仓库 iEDA</a> · <a href="https://github.com/OSCC-Project/iEDA/blob/master/docs/paper/ISEDA\'23-iEDA-final.pdf" target="_blank" rel="noreferrer">论文 iEDA</a>',
+          competitions_title: '竞赛经历',
+          comp1_h3: '2025 openDACS 开源 EDA 与芯片大赛 · 布线前瞻资源感知',
+          comp1_meta: '2025.10 - 2026.01',
+          comp1_desc:
+            '团队成员：李子超、<strong>邱奕杭</strong>、王瑞。指导老师：蔡晔、王伟强。小组构建布线需求增量预测模型，并将其整合进布线器实现闭环优化；在总决赛路演答辩中以总分第一名获评“开源创新之星”。',
+          comp2_h3: '2025 EDA 平方 · 侠客岛难题挑战：面向 PPA 的混合尺寸布局算法',
+          comp2_meta: '2024.11 - 2025.09',
+          comp2_desc:
+            '团队成员：陈仕健、赖心华、<strong>邱奕杭</strong>。指导老师：李兴权、解壁伟、陈明宇。小组提出面向 PPA 优化的混合尺寸布局算法，并基于多目标贝叶斯优化实现自动参数调优，最终获得第三名。',
+          comp3_h3: 'ICCAD Contest Problem B：Die-to-Die 三维芯片布局',
+          comp3_meta: '2022.06 - 2022.09',
+          comp3_desc:
+            '团队成员：赵雪岩、陈仕健、<strong>邱奕杭</strong>、李江考。指导老师：黄志鹏、李兴权。小组基于开源布局器 DREAMPlace，构建双层规划模型与交替优化框架，解决 3D IC 中的 Die-to-Die 布局问题。竞赛获 First Place，成果发表于 ICCAD，论文题目为《iPL-3D: A Novel Bilevel Programming Model for Die-to-Die Placement》。',
+          comp4_h3: 'EDA 设计精英挑战赛：智能 MPW 拼接',
+          comp4_meta: '2020.08 - 2020.12',
+          comp4_desc:
+            '团队成员：钟立钊、<strong>邱奕杭</strong>、陈建宇。指导老师：熊晓明、蔡述庭。小组将 MPW 版图拼接建模为 Floorplan 多目标优化问题，采用 B* 树与快速模拟退火算法求解，获全国二等奖。',
+          comp5_h3: '美国大学生数学建模竞赛（MCM）',
+          comp5_meta: '2018.12 - 2020.03',
+          comp5_desc:
+            '团队成员：<strong>邱奕杭</strong>、陈剑宇、汤桂斌，获得 M 奖；团队成员：陈柱光、<strong>邱奕杭</strong>、麦家升，获得 F 奖。本人连续两届参赛，主导建模并参与论文写作，分别获得 Finalists（全球前 1%）与 Meritorious Winners（全球前 6%）。',
+          comp6_h3: '全国大学生恩智浦杯智能汽车竞赛',
+          comp6_meta: '2017.09 - 2018.09',
+          comp6_desc:
+            '团队成员：简明朝、杨锐佳、<strong>邱奕杭</strong>。小组搭建无线充电节能直立小车，实现车体直立、自主循迹与自动充电等功能，获华南赛区三等奖。',
+          honors_title: '荣誉与技能',
+          honors_practice_h3: '荣誉与实践',
+          honors_practice_li1:
+            '本科期间多次获评国家奖学金、创新奖学金、企业奖学金、优秀学生干部等荣誉，并获评“星耀工大”校园“十佳大学生”、揭阳市“智能工匠”奖与“科技创新”奖。',
+          honors_practice_li2: '曾任班长、团支书、班主任助理，组织并参与多项班级与学生工作活动，具备较强的组织协调与执行能力。',
+          honors_practice_li3: '硕士期间在鹏城实验室 iEDA 团队开展开源 EDA 软件研发实践，积累了完整的工程协作与项目推进经验。',
+          honors_practice_li4: '博士期间加入中国科学院大学计算机学院羽毛球队，并在学院比赛中获得男双、混双双亚军。',
+          honors_skills_h3: '技术能力',
+          honors_skills_li1: '编程语言与开发：熟练使用 C++、Python，具备规范化工程开发与代码协作经验。',
+          honors_skills_li2: '工程工具：熟悉 Linux、Git、CMake、Docker、UV 等研发工具链与工作流。',
+          honors_skills_li3: '领域经验：具备商业物理设计工具 Innovus，以及开源物理设计工具链 iEDA、OpenROAD 的全流程实践经验。',
+          honors_skills_li4: '英语能力：通过 CET-6，具备良好的文献阅读、信息检索与学术写作能力。',
+          contact_title: '联系方式',
+          contact_p1: '电子邮箱：<a href="mailto:qiuyihang23@mails.ucas.ac.cn">qiuyihang23@mails.ucas.ac.cn</a>',
+          contact_p2:
+            'GitHub仓库：<a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">@YihangQiu</a>',
+          contact_p3:
+            '谷歌学术：<a href="https://scholar.google.com/citations?user=EEawgYkAAAAJ&hl=en" target="_blank" rel="noreferrer">@YihangQiu</a>',
+          contact_p4:
+            '常住地：北京市怀柔区怀北镇中国科学院大学（雁栖湖校区）；广东省深圳市光明区深圳理工大学（明珠校区）',
+          footer_text: '© 2026 邱奕杭。最后更新：2026年2月11日。',
+          avatar_alt: '邱奕杭头像',
+          proj1_fig1_alt: 'AiEDA 框架图',
+          proj1_fig2_alt: '基于 AiEDA 的向量化数据可视化图',
+          proj2_fig1_alt: 'iEDA 框架图',
+          toggle_text: 'English',
+          toggle_aria: '切换到英文',
+          html_lang: 'zh-CN'
+        },
+        en: {
+          page_title: 'Yihang Qiu | Personal Homepage',
+          page_description:
+            "Yihang Qiu's homepage: education, projects, competitions, honors, skills, and contact information.",
+          brand: 'Yihang Qiu',
+          nav_about: 'About',
+          nav_education: 'Education',
+          nav_projects: 'Projects',
+          nav_competitions: 'Competitions',
+          nav_honors: 'Honors',
+          nav_contact: 'Contact',
+          quick_email: 'Email',
+          quick_github: 'GitHub',
+          quick_scholar: 'Google Scholar',
+          label: 'Ph.D. Candidate | AI + EDA',
+          subtitle: 'University of Chinese Academy of Sciences · Ph.D. Candidate in Computer Application Technology',
+          intro:
+            'My current research focuses on deep integration of AI (compact models such as CNN/GNN, large language models, and agents) with EDA. With an interdisciplinary EE/CS background, I have long worked on turning algorithms into practical value for chip design workflows. I prefer pursuing research that is foundational, important, and impactful. I align with the “heavy-industry model of research,” believing that valuable research should be built on long-term and rigorous engineering accumulation. My work style emphasizes open source, framework-oriented work, and outcomes that are deployable, reproducible, and scalable. My research interests are centered on the physical design stage, including optimization of classical placement algorithms, AI-assisted physical design, and methodology for physical-design analysis. Through open-source projects such as iEDA and AiEDA, I continue advancing end-to-end optimization from flow execution and data extraction to design vectorization, model training, and closed-loop validation.',
+          education_title: 'Education',
+          edu1_h3: 'University of Chinese Academy of Sciences · Ph.D. · Computer Application Technology',
+          edu1_meta: 'Sep 2023 - Present · School of Computer Science and Technology',
+          edu1_desc: 'Core topic: Semantic modeling and vector-driven optimization for IC physical design. Advisor: Weiqiang Wang.',
+          edu2_h3: 'Guangdong University of Technology · M.Eng. (Recommended Admission) · Control Science and Engineering',
+          edu2_meta: 'Sep 2020 - Jul 2023 · School of Automation',
+          edu2_desc: 'Core topic: Routability-driven placement optimization for VLSI. Advisor: Xiaoming Xiong.',
+          edu3_h3: 'Guangdong University of Technology · B.Eng. · Communication Engineering (GDUT IC Class)',
+          edu3_meta: 'Sep 2016 - Jul 2020 · School of Information Engineering (School of Integrated Circuits)',
+          edu3_desc:
+            'Core courses: Algorithms and Data Structures, Computer Architecture, Information Theory, Principles of Communications, Digital IC Design, Analog IC Design, Signals and Systems, etc. Ranked 1st/182 in Communication Engineering and 1st/60 in the IC Class.',
+          projects_title: 'Projects',
+          proj1_h3: 'Open-Source AI-Aided EDA Library: AiEDA',
+          proj1_meta: 'Jul 2024 - Present · Peng Cheng Laboratory Project · Core Developer',
+          proj1_li1:
+            'Targeting the data gap in AI-aided EDA, we built a closed-loop optimization platform based on the concept of design vectorization.',
+          proj1_li2:
+            'The platform covers flow execution, feature extraction, vectorized data generation, model training, and deployment.',
+          proj1_li3:
+            'Built the open-source chip dataset iDATA from 50 chip cases, reducing the barrier for chip-data access and use.',
+          proj1_li4:
+            'As an open-source code maintainer, related research output “AiEDA: An Open-Source AI-Aided Design Library for Design-to-Vector” was accepted by TCAD, a top EDA journal.',
+          proj1_li5: 'Won an Excellent Demo award in the on-site exhibition of CCF DAC Demo Contest.',
+          proj1_links:
+            '<a href="https://github.com/OSCC-Project/AiEDA" target="_blank" rel="noreferrer">Repository AiEDA</a> · <a href="https://huggingface.co/datasets/AiEDA/iDATA" target="_blank" rel="noreferrer">Dataset iDATA</a> · <a href="https://ieeexplore.ieee.org/document/11244094" target="_blank" rel="noreferrer">Paper AiEDA</a>',
+          proj2_h3: 'Open-Source Physical Design Toolkit: iEDA',
+          proj2_meta:
+            'Oct 2021 - Dec 2025 · Peng Cheng Laboratory / Institute of Computing Technology, CAS Project · Major Developer',
+          proj2_li1:
+            'Participated in developing the first open-source full-flow physical design toolkit in China, with 4+ tape-outs completed.',
+          proj2_li2: 'Deeply involved in feature definition and implementation, code optimization, and refactoring.',
+          proj2_li3: 'Developed the Evaluation module to support fast performance assessment of flow metrics.',
+          proj2_li4:
+            'Contributed to the iPL module (routability-driven placement algorithm) and the Vectorization module (multi-level layout decomposition).',
+          proj2_li5:
+            'The team paper “iEDA: An Open-Source Intelligent Physical Implementation Toolkit and Library” won the Best Paper Award at ISEDA 2023.',
+          proj2_links:
+            '<a href="https://github.com/OSCC-Project/iEDA" target="_blank" rel="noreferrer">Repository iEDA</a> · <a href="https://github.com/OSCC-Project/iEDA/blob/master/docs/paper/ISEDA\'23-iEDA-final.pdf" target="_blank" rel="noreferrer">Paper iEDA</a>',
+          competitions_title: 'Competitions',
+          comp1_h3: '2025 openDACS Open-Source EDA and Chip Contest · Routing Foresight Resource Awareness',
+          comp1_meta: 'Oct 2025 - Jan 2026',
+          comp1_desc:
+            'Team members: Zichao Li, <strong>Yihang Qiu</strong>, Rui Wang. Advisors: Ye Cai, Weiqiang Wang. The team built an incremental routing-demand prediction model and integrated it into the router for closed-loop optimization. Ranked 1st overall in the final roadshow defense and won the “Open-Source Innovation Star” award.',
+          comp2_h3: '2025 EDA Square · Xiakedao Challenge: Mixed-Size Placement for PPA Optimization',
+          comp2_meta: 'Nov 2024 - Sep 2025',
+          comp2_desc:
+            'Team members: Shijian Chen, Xinhua Lai, <strong>Yihang Qiu</strong>. Advisors: Xingquan Li, Biwei Xie, Mingyu Chen. The team proposed a mixed-size placement algorithm for PPA optimization and achieved automatic parameter tuning via multi-objective Bayesian optimization, winning 3rd place.',
+          comp3_h3: 'ICCAD Contest Problem B: Die-to-Die 3D Chip Placement',
+          comp3_meta: 'Jun 2022 - Sep 2022',
+          comp3_desc:
+            'Team members: Xueyan Zhao, Shijian Chen, <strong>Yihang Qiu</strong>, Jiangkao Li. Advisors: Zhipeng Huang, Xingquan Li. Based on the open-source placer DREAMPlace, the team built a bilevel programming model and an alternating optimization framework to solve the Die-to-Die placement problem in 3D IC. Won First Place; results were published at ICCAD as “iPL-3D: A Novel Bilevel Programming Model for Die-to-Die Placement.”',
+          comp4_h3: 'EDA Design Elite Challenge: Intelligent MPW Stitching',
+          comp4_meta: 'Aug 2020 - Dec 2020',
+          comp4_desc:
+            'Team members: Lizhao Zhong, <strong>Yihang Qiu</strong>, Jianyu Chen. Advisors: Xiaoming Xiong, Shuting Cai. The team modeled MPW stitching as a multi-objective floorplanning problem and solved it using B* tree and fast simulated annealing, winning National Second Prize.',
+          comp5_h3: 'Mathematical Contest in Modeling (MCM)',
+          comp5_meta: 'Dec 2018 - Mar 2020',
+          comp5_desc:
+            'Team members: <strong>Yihang Qiu</strong>, Jianyu Chen, Guibin Tang (M Award); Team members: Zhuguang Chen, <strong>Yihang Qiu</strong>, Jiasheng Mai (F Award). Participated in two consecutive years, led modeling and contributed to writing, and received Finalists (top 1% globally) and Meritorious Winners (top 6% globally).',
+          comp6_h3: 'NXP Cup National College Student Intelligent Car Competition',
+          comp6_meta: 'Sep 2017 - Sep 2018',
+          comp6_desc:
+            'Team members: Mingchao Jian, Ruijia Yang, <strong>Yihang Qiu</strong>. The team built an energy-efficient upright car with wireless charging that can keep upright balance, perform autonomous line following, and auto-charge, winning the Third Prize in the South China regional contest.',
+          honors_title: 'Honors & Skills',
+          honors_practice_h3: 'Honors & Practice',
+          honors_practice_li1:
+            'Received multiple awards during undergraduate study, including National Scholarship, Innovation Scholarship, enterprise scholarships, and Outstanding Student Cadre; also honored as one of the “Top 10 Students” at GDUT and awarded Jieyang “Intelligent Craftsman” and “Technology Innovation” honors.',
+          honors_practice_li2:
+            'Served as class monitor, Youth League secretary, and class advisor assistant, with solid organization, coordination, and execution skills.',
+          honors_practice_li3:
+            'Conducted open-source EDA software R&D practice in the iEDA team at Peng Cheng Laboratory during the master period, accumulating end-to-end engineering collaboration experience.',
+          honors_practice_li4:
+            'Joined the badminton team of the School of Computer Science at UCAS during Ph.D. study, and won runner-up in both men’s doubles and mixed doubles at school tournaments.',
+          honors_skills_h3: 'Technical Skills',
+          honors_skills_li1:
+            'Programming & development: proficient in C++ and Python, with standardized engineering development and collaborative coding experience.',
+          honors_skills_li2: 'Engineering tools: familiar with Linux, Git, CMake, Docker, UV, and related workflows.',
+          honors_skills_li3:
+            'Domain experience: full-flow practice with commercial physical design tool Innovus and open-source toolchains iEDA and OpenROAD.',
+          honors_skills_li4:
+            'English: CET-6, with strong capability in literature reading, information retrieval, and academic writing.',
+          contact_title: 'Contact',
+          contact_p1: 'Email: <a href="mailto:qiuyihang23@mails.ucas.ac.cn">qiuyihang23@mails.ucas.ac.cn</a>',
+          contact_p2:
+            'GitHub: <a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">@YihangQiu</a>',
+          contact_p3:
+            'Google Scholar: <a href="https://scholar.google.com/citations?user=EEawgYkAAAAJ&hl=en" target="_blank" rel="noreferrer">@YihangQiu</a>',
+          contact_p4:
+            'Address: University of Chinese Academy of Sciences (Yanqi Lake Campus), Huaibei Town, Huairou District, Beijing; Shenzhen University of Advanced Technology (Mingzhu Campus), Guangming District, Shenzhen, Guangdong.',
+          footer_text: '© 2026 Yihang Qiu. Last updated: February 11, 2026.',
+          avatar_alt: 'Portrait of Yihang Qiu',
+          proj1_fig1_alt: 'AiEDA framework diagram',
+          proj1_fig2_alt: 'Vectorized data visualization based on AiEDA',
+          proj2_fig1_alt: 'iEDA framework diagram',
+          toggle_text: '中文',
+          toggle_aria: 'Switch to Chinese',
+          html_lang: 'en'
+        }
+      };
+
+      const langToggle = document.getElementById('lang-toggle');
+      let currentLang = 'zh';
+
+      const applyLanguage = (lang) => {
+        const dict = translations[lang];
+        if (!dict) return;
+
+        Object.entries(i18nSelectors).forEach(([key, selector]) => {
+          const element = document.querySelector(selector);
+          if (element && dict[key] !== undefined) {
+            element.innerHTML = dict[key];
+          }
+        });
+
+        Object.entries(altSelectors).forEach(([key, selector]) => {
+          const element = document.querySelector(selector);
+          if (element && dict[key] !== undefined) {
+            element.setAttribute('alt', dict[key]);
+          }
+        });
+
+        document.title = dict.page_title;
+        document.documentElement.lang = dict.html_lang;
+        const description = document.querySelector('meta[name="description"]');
+        if (description) {
+          description.setAttribute('content', dict.page_description);
+        }
+        if (langToggle) {
+          langToggle.textContent = dict.toggle_text;
+          langToggle.setAttribute('aria-label', dict.toggle_aria);
+        }
+      };
+
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          currentLang = currentLang === 'zh' ? 'en' : 'zh';
+          applyLanguage(currentLang);
+        });
+      }
+
+      applyLanguage(currentLang);
     </script>
   </body>
 </html>
