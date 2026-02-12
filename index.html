@@ -31,14 +31,13 @@
 
     <main class="container">
       <section id="about" class="hero section-card reveal">
-        <img src="https://placehold.co/280x340" alt="邱奕杭头像" class="avatar" />
+        <img src="personal.png" alt="邱奕杭头像" class="avatar" />
         <div class="hero-content">
           <p class="label">Ph.D. Candidate | AI + EDA</p>
           <h1>邱奕杭</h1>
           <p class="subtitle">中国科学院大学 · 计算机应用技术博士生</p>
           <p class="intro">
-            目前研究方向聚焦 AI 与 EDA 结合，具备 EE/CS 跨学科背景。深度参与开源 EDA
-            工具链研发（iEDA、AiEDA），关注从芯片设计流程到数据向量化、模型训练与部署的全链路优化。
+            目前研究方向聚焦 AI（传统小模型、大语言模型与智能体）与 EDA 的深度融合，具备 EE/CS 跨学科背景，长期围绕“如何让算法真正服务芯片设计流程”开展研究与工程实践。科研偏好是做“基础的、重要的、有影响力”的工作，认可“科研重工业模式”，即有价值的科研应建立在长期、扎实的工程积淀之上。工作风格上推崇开源，注重框架性工作和基础设施构建，强调研究的可落地、可复现、可扩展。研究兴趣聚焦物理设计阶段，涵盖经典布局算法优化、AI 辅助物理设计、物理设计分析方法学等方向，并在 iEDA、AiEDA 等开源项目中持续推进从流程运行、数据提取、设计向量化到模型训练与闭环验证的全链路优化。
           </p>
           <ul class="quick-links">
             <li><a href="mailto:qiuyihang23@mails.ucas.ac.cn">Email</a></li>
@@ -60,17 +59,19 @@
         <div class="item">
           <h3>中国科学院大学 · 博士 · 计算机应用技术</h3>
           <p class="meta">2023.09 - 至今 · 计算机科学与技术学院</p>
-          <p>导师：王伟强、李兴权。</p>
+          <p>核心课题：集成电路物理设计语义建模与向量驱动优化研究。导师：王伟强。</p>
         </div>
         <div class="item">
           <h3>广东工业大学 · 硕士（保研） · 控制科学与工程</h3>
           <p class="meta">2020.09 - 2023.07 · 自动化学院</p>
-          <p>导师：熊晓明、李兴权。</p>
+          <p>核心课题：面向 VLSI 可布线性布局优化算法研究。导师：熊晓明。</p>
         </div>
         <div class="item">
-          <h3>广东工业大学 · 本科 · 通信工程（IC 创新班）</h3>
+          <h3>广东工业大学 · 本科 · 通信工程（广工 IC 班）</h3>
           <p class="meta">2016.09 - 2020.07 · 信息工程学院（集成电路学院）</p>
-          <p>绩点排名第一（1/182，1/60）。</p>
+          <p>
+            核心课程：算法与数据结构、计算机体系结构、信息论、通信原理、数字集成电路设计、模拟集成电路设计、信号与系统等。绩点分别在通信工程专业排名第一（1/182）与 IC 班排名第一（1/60）。
+          </p>
         </div>
       </section>
 
@@ -80,35 +81,62 @@
           <h3>开源 AI 辅助 EDA 工具库 AiEDA</h3>
           <p class="meta">2024.07 - 至今 · 鹏城实验室课题 · 核心研发人员</p>
           <ul>
+            <li>面向 AI 辅助 EDA 的“数据鸿沟”问题，基于“设计向量化”概念搭建闭环优化平台。</li>
+            <li>平台覆盖设计流程运行、特征提取、向量化数据生成、模型训练与部署。</li>
+            <li>基于 50 个芯片用例构建开源芯片数据集 iDATA，降低研究者获取与使用芯片数据的门槛。</li>
             <li>
-              面向 AI 辅助 EDA 的“数据鸿沟”问题，基于“设计向量化”概念搭建闭环优化平台。
+              开源代码维护者，相关论文成果《AiEDA: An Open-Source AI-Aided Design Library for Design-to-Vector》被 EDA 领域顶刊 TCAD 收录。
             </li>
-            <li>
-              平台覆盖设计流程运行、特征提取、向量化数据生成、模型训练与部署。
-            </li>
-            <li>
-              基于 50 个芯片用例构建开源芯片数据集 iDATA，降低研究者获取和使用芯片数据门槛。
-            </li>
-            <li>
-              开源代码维护者，相关成果投稿/发表于 TCAD 与 DAC，并在 CCF DAC Demo Contest 现场展评中获优秀 Demo。
-            </li>
+            <li>在 CCF DAC Demo Contest 现场展评中获优秀 Demo。</li>
           </ul>
+          <figure class="project-figure">
+            <img
+              src="flow.png"
+              alt="AiEDA 框架图"
+              class="project-image"
+              style="max-width: 600px; max-height: 260px; width: 100%; height: auto"
+            />
+          </figure>
+          <figure class="project-figure">
+            <img
+              src="gui.png"
+              alt="基于 AiEDA 的向量化数据可视化图"
+              class="project-image"
+              style="max-width: 600px; max-height: 260px; width: 100%; height: auto"
+            />
+          </figure>
           <p>
-            <a href="https://github.com/OSCC-Project/AiEDA" target="_blank" rel="noreferrer">项目仓库</a>
+            <a href="https://github.com/OSCC-Project/AiEDA" target="_blank" rel="noreferrer">代码仓库 AiEDA</a>
+            ·
+            <a href="https://huggingface.co/datasets/AiEDA/iDATA" target="_blank" rel="noreferrer">数据集 iDATA</a>
+            ·
+            <a href="https://ieeexplore.ieee.org/document/11244094" target="_blank" rel="noreferrer">论文 AiEDA</a>
           </p>
         </div>
         <div class="item">
           <h3>开源物理设计工具链 iEDA</h3>
-          <p class="meta">2021.10 - 至今 · 鹏城实验室/中科院计算所课题 · 主要研发人员</p>
+          <p class="meta">2021.10 - 2025.12 · 鹏城实验室/中国科学院计算所课题 · 主要研发人员</p>
           <ul>
-            <li>参与国内首个开源物理设计全流程工具链研发，项目已完成 5 次流片。</li>
+            <li>参与国内首个开源物理设计全流程工具链研发，项目已完成 4 次及以上流片。</li>
             <li>深度参与功能定义与实现、代码优化与重构。</li>
             <li>负责 Evaluation 模块开发，支撑流程性能指标快速评估。</li>
             <li>参与 iPL 模块研发（可布线性驱动布局算法）与 Vectorization 模块开发（版图多层级拆解）。</li>
-            <li>相关成果发表于 ASP-DAC 与 ISEDA。</li>
+            <li>
+              iEDA 小组论文《iEDA: An Open-Source Intelligent Physical Implementation Toolkit and Library》获 2023 ISEDA 最佳论文奖。
+            </li>
           </ul>
+          <figure class="project-figure">
+            <img
+              src="iEDA-ov.png"
+              alt="iEDA 框架图"
+              class="project-image"
+              style="max-width: 560px; max-height: 260px; width: 100%; height: auto"
+            />
+          </figure>
           <p>
-            <a href="https://github.com/OSCC-Project/iEDA" target="_blank" rel="noreferrer">项目仓库</a>
+            <a href="https://github.com/OSCC-Project/iEDA" target="_blank" rel="noreferrer">代码仓库 iEDA</a>
+            ·
+            <a href="https://github.com/OSCC-Project/iEDA/blob/master/docs/paper/ISEDA'23-iEDA-final.pdf" target="_blank" rel="noreferrer">论文 iEDA</a>
           </p>
         </div>
       </section>
@@ -116,31 +144,45 @@
       <section id="competitions" class="section-card reveal">
         <h2>竞赛经历</h2>
         <div class="item">
-          <h3>ICCAD Contest Problem B</h3>
-          <p class="meta">2022.06 - 2022.09</p>
+          <h3>2025 openDACS 开源 EDA 与芯片大赛 · 布线前瞻资源感知</h3>
+          <p class="meta">2025.10 - 2026.01</p>
           <p>
-            Die-to-Die 三维芯片布局。前期负责打通数据流，后期实现布局合法化，获 First Place，成果发表于 ICCAD。
+            团队成员：李子超、<strong>邱奕杭</strong>、王瑞。指导老师：蔡晔、王伟强。小组构建布线需求增量预测模型，并将其整合进布线器实现闭环优化；在总决赛路演答辩中以总分第一名获评“开源创新之星”。
           </p>
         </div>
         <div class="item">
-          <h3>EDA 设计精英挑战赛</h3>
+          <h3>2025 EDA 平方 · 侠客岛难题挑战：面向 PPA 的混合尺寸布局算法</h3>
+          <p class="meta">2024.11 - 2025.09</p>
+          <p>
+            团队成员：陈仕健、赖心华、<strong>邱奕杭</strong>。指导老师：李兴权、解壁伟、陈明宇。小组提出面向 PPA 优化的混合尺寸布局算法，并基于多目标贝叶斯优化实现自动参数调优，最终获得第三名。
+          </p>
+        </div>
+        <div class="item">
+          <h3>ICCAD Contest Problem B：Die-to-Die 三维芯片布局</h3>
+          <p class="meta">2022.06 - 2022.09</p>
+          <p>
+            团队成员：赵雪岩、陈仕健、<strong>邱奕杭</strong>、李江考。指导老师：黄志鹏、李兴权。小组基于开源布局器 DREAMPlace，构建双层规划模型与交替优化框架，解决 3D IC 中的 Die-to-Die 布局问题。竞赛获 First Place，成果发表于 ICCAD，论文题目为《iPL-3D: A Novel Bilevel Programming Model for Die-to-Die Placement》。
+          </p>
+        </div>
+        <div class="item">
+          <h3>EDA 设计精英挑战赛：智能 MPW 拼接</h3>
           <p class="meta">2020.08 - 2020.12</p>
           <p>
-            将 MPW 版图拼接建模为 Floorplan 多目标优化问题，使用 B* 树与快速模拟退火算法求解，获全国二等奖。
+            团队成员：钟立钊、<strong>邱奕杭</strong>、陈建宇。指导老师：熊晓明、蔡述庭。小组将 MPW 版图拼接建模为 Floorplan 多目标优化问题，采用 B* 树与快速模拟退火算法求解，获全国二等奖。
           </p>
         </div>
         <div class="item">
           <h3>美国大学生数学建模竞赛（MCM）</h3>
           <p class="meta">2018.12 - 2020.03</p>
           <p>
-            连续两届参赛，主导建模并辅助写作，分别获 Finalists（全球前 1%）与 Meritorious Winners（全球前 6%）。
+            团队成员：<strong>邱奕杭</strong>、陈剑宇、汤桂斌，获得 M 奖；团队成员：陈柱光、<strong>邱奕杭</strong>、麦家升，获得 F 奖。本人连续两届参赛，主导建模并参与论文写作，分别获得 Finalists（全球前 1%）与 Meritorious Winners（全球前 6%）。
           </p>
         </div>
         <div class="item">
           <h3>全国大学生恩智浦杯智能汽车竞赛</h3>
           <p class="meta">2017.09 - 2018.09</p>
           <p>
-            搭建无线充电节能直立小车，负责驱动电路板绘制与循迹算法 C 语言实现，获华南赛区三等奖。
+            团队成员：简明朝、杨锐佳、<strong>邱奕杭</strong>。小组搭建无线充电节能直立小车，实现车体直立、自主循迹与自动充电等功能，获华南赛区三等奖。
           </p>
         </div>
       </section>
@@ -150,32 +192,36 @@
         <div class="item">
           <h3>荣誉与实践</h3>
           <ul>
-            <li>国家奖学金（2 次）、创新奖学金、优秀学生干部、校园十佳大学生等。</li>
-            <li>羽毛球院赛男双/混双双亚军。</li>
-            <li>曾任班长、团支书、班主任助理，组织参与多项班级活动。</li>
+            <li>
+              本科期间多次获评国家奖学金、创新奖学金、企业奖学金、优秀学生干部等荣誉，并获评“星耀工大”校园“十佳大学生”、揭阳市“智能工匠”奖与“科技创新”奖。
+            </li>
+            <li>曾任班长、团支书、班主任助理，组织并参与多项班级与学生工作活动，具备较强的组织协调与执行能力。</li>
+            <li>硕士期间在鹏城实验室 iEDA 团队开展开源 EDA 软件研发实践，积累了完整的工程协作与项目推进经验。</li>
+            <li>博士期间加入中国科学院大学计算机学院羽毛球队，并在学院比赛中获得男双、混双双亚军。</li>
           </ul>
         </div>
         <div class="item">
           <h3>技术能力</h3>
           <ul>
-            <li>编程语言与开发：C++、Python，具备标准化工程开发经验。</li>
-            <li>工程工具：Linux、Git、CMake、Docker、UV。</li>
-            <li>领域经验：具备 Innovus、iEDA、OpenROAD 全流程实践经验。</li>
-            <li>英语能力：CET-6（524），具备文献阅读、信息检索与学术写作能力。</li>
+            <li>编程语言与开发：熟练使用 C++、Python，具备规范化工程开发与代码协作经验。</li>
+            <li>工程工具：熟悉 Linux、Git、CMake、Docker、UV 等研发工具链与工作流。</li>
+            <li>领域经验：具备商业物理设计工具 Innovus，以及开源物理设计工具链 iEDA、OpenROAD 的全流程实践经验。</li>
+            <li>英语能力：通过 CET-6，具备良好的文献阅读、信息检索与学术写作能力。</li>
           </ul>
         </div>
       </section>
 
       <section id="contact" class="section-card reveal">
         <h2>联系方式</h2>
-        <p>Email: <a href="mailto:qiuyihang23@mails.ucas.ac.cn">qiuyihang23@mails.ucas.ac.cn</a></p>
-        <p>GitHub: <a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">@YihangQiu</a></p>
+        <p>电子邮箱：<a href="mailto:qiuyihang23@mails.ucas.ac.cn">qiuyihang23@mails.ucas.ac.cn</a></p>
+        <p>GitHub仓库：<a href="https://github.com/YihangQiu" target="_blank" rel="noreferrer">@YihangQiu</a></p>
         <p>
-          Google Scholar:
+          谷歌学术：
           <a href="https://scholar.google.com/citations?user=EEawgYkAAAAJ&hl=en" target="_blank" rel="noreferrer"
-            >EEawgYkAAAAJ</a
+            >@YihangQiu</a
           >
         </p>
+        <p>常住地：北京市怀柔区怀北镇中国科学院大学（雁栖湖校区）；广东省深圳市光明区深圳理工大学（明珠校区）</p>
       </section>
     </main>
 

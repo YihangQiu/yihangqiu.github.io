@@ -172,6 +172,33 @@ ol {
   margin-top: 10px;
 }
 
+
+.project-figure {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-image {
+  width: min(100%, 420px);
+  max-height: 200px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #f8fbff;
+}
+
+.project-figure figcaption {
+  width: 100%;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
 footer {
   text-align: center;
   padding: 12px 16px 26px;
@@ -215,5 +242,10 @@ footer {
   .section-card {
     padding: 20px;
     border-radius: 14px;
+  }
+
+  .project-image {
+    width: min(100%, 320px);
+    max-height: 150px;
   }
 }
