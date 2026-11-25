@@ -84,9 +84,9 @@
           <h3>开源物理设计智能体 ECOS Agent</h3>
           <p class="meta">2025.12 - 至今 · 中国科学院计算技术研究所课题 · 核心研究人员</p>
           <ul>
-            <li><strong>LLM 只规划，EDA 工具执行。</strong> 在物理设计流程中，LLM 根据当前设计状态和工具反馈提出下一步操作，不直接运行命令或修改设计。工作台校验操作后交由 EDA 工具执行，结果用于下一轮规划。</li>
-            <li>物理设计必须满足工艺规则、时序和签核要求，因此采用受控执行：优化计划须经用户确认，候选配置仅在允许的参数范围和预算内调度，并在独立工作区运行。时序和设计规则由 EDA 工具检查。</li>
-            <li>在 ECOS Studio 中提供基于领域知识库和 EDA 工具源码的问答，以及对话式 RTL 到 GDS 配置向导。</li>
+            <li>构建受控物理设计智能体，LLM 只负责根据当前设计状态和工具反馈规划下一步，经校验的操作由 EDA 工具执行。</li>
+            <li>实现受控参数寻优，支持用户确认优化计划、校验参数范围与试验预算、隔离运行候选配置并记录结果。</li>
+            <li>开发基于领域知识库与 EDA 工具源码的问答功能，以及对话式 RTL 到 GDS 配置向导。</li>
             <li>在 GCD 示例中，经过 7 轮调参，布线后线长较默认配置降低约 2.8%，同时通过时序和设计规则检查（DRC）。</li>
             <li>相关研究工作已投稿至软件工程顶会。</li>
           </ul>
@@ -400,11 +400,9 @@
           projects_title: '项目经历',
           agent_h3: '开源物理设计智能体 ECOS Agent',
           agent_meta: '2025.12 - 至今 · 中国科学院计算技术研究所课题 · 核心研究人员',
-          agent_li1:
-            '<strong>LLM 只规划，EDA 工具执行。</strong> 在物理设计流程中，LLM 根据当前设计状态和工具反馈提出下一步操作，不直接运行命令或修改设计。工作台校验操作后交由 EDA 工具执行，结果用于下一轮规划。',
-          agent_li2:
-            '物理设计必须满足工艺规则、时序和签核要求，因此采用受控执行：优化计划须经用户确认，候选配置仅在允许的参数范围和预算内调度，并在独立工作区运行。时序和设计规则由 EDA 工具检查。',
-          agent_li3: '在 ECOS Studio 中提供基于领域知识库和 EDA 工具源码的问答，以及对话式 RTL 到 GDS 配置向导。',
+          agent_li1: '构建受控物理设计智能体，LLM 只负责根据当前设计状态和工具反馈规划下一步，经校验的操作由 EDA 工具执行。',
+          agent_li2: '实现受控参数寻优，支持用户确认优化计划、校验参数范围与试验预算、隔离运行候选配置并记录结果。',
+          agent_li3: '开发基于领域知识库与 EDA 工具源码的问答功能，以及对话式 RTL 到 GDS 配置向导。',
           agent_li4: '在 GCD 示例中，经过 7 轮调参，布线后线长较默认配置降低约 2.8%，同时通过时序和设计规则检查（DRC）。',
           agent_li5: '相关研究工作已投稿至软件工程顶会。',
           agent_caption: 'ECOS Agent 在 ECOS Studio 中的工作入口',
@@ -515,11 +513,11 @@
           agent_h3: 'Open-Source Physical Design Agent: ECOS Agent',
           agent_meta: 'Dec 2025 - Present · Institute of Computing Technology, Chinese Academy of Sciences · Core Researcher',
           agent_li1:
-            '<strong>The LLM plans; EDA tools execute.</strong> During physical design, the LLM uses the current design state and tool feedback to propose the next action. It does not run commands or modify the design directly. The workbench validates proposed actions before EDA tools execute them. The results inform the next planning step.',
+            'Built a controlled physical design agent. The LLM only plans the next step based on the current design state and tool feedback, while EDA tools execute validated actions.',
           agent_li2:
-            'Physical design must meet process rules, timing requirements, and signoff criteria. Users approve optimization plans, and the workbench schedules trials in isolated workspaces within allowed parameter ranges and budgets. EDA tools check timing and design rules.',
+            'Implemented controlled parameter tuning with user approval of optimization plans, parameter range and trial budget checks, isolated runs, and result logging.',
           agent_li3:
-            'ECOS Agent also supports domain Q&A grounded in a knowledge base and EDA tool source code, and a conversational RTL-to-GDS configuration wizard.',
+            'Developed domain Q&A based on a knowledge base and EDA tool source code, along with a conversational RTL-to-GDS configuration wizard.',
           agent_li4:
             'In the GCD example, seven tuning rounds reduced post-route wirelength by about 2.8% relative to the default configuration while passing timing and design rule checks (DRC).',
           agent_li5: 'Related research has been submitted to a top-tier software engineering conference.',
