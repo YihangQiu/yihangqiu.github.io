@@ -82,25 +82,29 @@
         <h2>项目经历</h2>
         <article id="ecos-agent" class="item">
           <h3>开源物理设计智能体 ECOS Agent</h3>
-          <p class="meta">2025.12 - 至今 · 中国科学院计算技术研究所课题</p>
+          <p class="meta">2025.12 - 至今 · 中国科学院计算技术研究所课题 · 核心研究人员</p>
           <ul>
             <li>为开源工具链 ECOS Studio 构建物理设计智能体，检索领域知识库与 EDA 工具源码，解答流程、算法、参数和指标问题。</li>
             <li>开发对话式设计向导，收集并校验 RTL 文件、约束和工艺等输入配置，经用户确认后启动 RTL 到 GDS 流程。</li>
             <li>将自然语言目标转化为待确认的优化计划，在限定参数范围和预算内隔离运行候选配置，记录迭代过程与终态指标。</li>
             <li>在 GCD 示例中，经过 7 轮调参，布线后线长较默认配置降低约 2.8%，同时通过时序和设计规则检查（DRC）。</li>
+            <li>相关研究工作已投稿至软件工程顶会。</li>
           </ul>
           <figure class="project-figure">
             <img
-              src="ecos-agent.png"
-              alt="ECOS Agent 的入门面板，提供 GCD 示例、自定义 RTL 到 GDS 流程和已有设计优化入口"
+              src="ecos-agent-studio.png"
+              alt="ECOS Studio 首页及右侧 ECOS Agent 面板，展示 GCD 示例、自定义 RTL 到 GDS 流程和已有设计优化入口"
               class="project-image"
-              width="313"
-              height="194"
+              width="1269"
+              height="799"
               loading="lazy"
-              style="width: 100%; max-width: 313px; height: auto; max-height: none"
+              style="max-width: 600px; max-height: none; width: 100%; height: auto"
             />
             <figcaption>ECOS Agent 在 ECOS Studio 中的工作入口</figcaption>
           </figure>
+          <p>
+            <a href="https://github.com/openecos-projects/ecos-studio" target="_blank" rel="noreferrer">代码仓库 ECOS Studio</a>
+          </p>
         </article>
         <div id="aieda" class="item">
           <h3>开源 AI 辅助 EDA 工具库 AiEDA</h3>
@@ -300,7 +304,9 @@
         agent_li2: '#ecos-agent li:nth-of-type(2)',
         agent_li3: '#ecos-agent li:nth-of-type(3)',
         agent_li4: '#ecos-agent li:nth-of-type(4)',
+        agent_li5: '#ecos-agent li:nth-of-type(5)',
         agent_caption: '#ecos-agent figcaption',
+        agent_repo: '#ecos-agent > p:last-of-type > a',
         proj1_h3: '#aieda h3',
         proj1_meta: '#aieda .meta',
         proj1_li1: '#aieda li:nth-of-type(1)',
@@ -393,12 +399,14 @@
             '核心课程：算法与数据结构、计算机体系结构、信息论、通信原理、数字集成电路设计、模拟集成电路设计、信号与系统等。绩点分别在通信工程专业排名第一（1/182）与 IC 班排名第一（1/60）。',
           projects_title: '项目经历',
           agent_h3: '开源物理设计智能体 ECOS Agent',
-          agent_meta: '2025.12 - 至今 · 中国科学院计算技术研究所课题',
+          agent_meta: '2025.12 - 至今 · 中国科学院计算技术研究所课题 · 核心研究人员',
           agent_li1: '为开源工具链 ECOS Studio 构建物理设计智能体，检索领域知识库与 EDA 工具源码，解答流程、算法、参数和指标问题。',
           agent_li2: '开发对话式设计向导，收集并校验 RTL 文件、约束和工艺等输入配置，经用户确认后启动 RTL 到 GDS 流程。',
           agent_li3: '将自然语言目标转化为待确认的优化计划，在限定参数范围和预算内隔离运行候选配置，记录迭代过程与终态指标。',
           agent_li4: '在 GCD 示例中，经过 7 轮调参，布线后线长较默认配置降低约 2.8%，同时通过时序和设计规则检查（DRC）。',
+          agent_li5: '相关研究工作已投稿至软件工程顶会。',
           agent_caption: 'ECOS Agent 在 ECOS Studio 中的工作入口',
+          agent_repo: '代码仓库 ECOS Studio',
           proj1_h3: '开源 AI 辅助 EDA 工具库 AiEDA',
           proj1_meta: '2024.07 - 至今 · 鹏城实验室课题 · 核心研发人员',
           proj1_li1: '面向 AI 辅助 EDA 的“数据鸿沟”问题，基于“设计向量化”概念搭建闭环优化平台。',
@@ -464,7 +472,7 @@
             '常住地：北京市怀柔区怀北镇中国科学院大学（雁栖湖校区）；广东省深圳市光明区深圳理工大学（明珠校区）',
           footer_text: '© 2026 邱奕杭。最后更新：2026年11月25日。',
           avatar_alt: '邱奕杭头像',
-          agent_fig_alt: 'ECOS Agent 的入门面板，提供 GCD 示例、自定义 RTL 到 GDS 流程和已有设计优化入口',
+          agent_fig_alt: 'ECOS Studio 首页及右侧 ECOS Agent 面板，展示 GCD 示例、自定义 RTL 到 GDS 流程和已有设计优化入口',
           proj1_fig1_alt: 'AiEDA 框架图',
           proj1_fig2_alt: '基于 AiEDA 的向量化数据可视化图',
           proj2_fig1_alt: 'iEDA 框架图',
@@ -503,7 +511,7 @@
             'Core courses: Algorithms and Data Structures, Computer Architecture, Information Theory, Principles of Communications, Digital IC Design, Analog IC Design, Signals and Systems, etc. Ranked 1st/182 in Communication Engineering and 1st/60 in the IC Class.',
           projects_title: 'Projects',
           agent_h3: 'Open-Source Physical Design Agent: ECOS Agent',
-          agent_meta: 'Dec 2025 - Present · Institute of Computing Technology, Chinese Academy of Sciences',
+          agent_meta: 'Dec 2025 - Present · Institute of Computing Technology, Chinese Academy of Sciences · Core Researcher',
           agent_li1:
             'Built a physical design agent for the open-source ECOS Studio toolchain. It answers questions about flows, algorithms, parameters, and metrics using a domain knowledge base and EDA tool source code.',
           agent_li2:
@@ -512,7 +520,9 @@
             'Translated natural-language objectives into optimization plans for user approval. The agent evaluates candidates in isolated workspaces within allowed parameter ranges and trial budgets, recording each trial and its final metrics.',
           agent_li4:
             'In the GCD example, seven tuning rounds reduced post-route wirelength by about 2.8% relative to the default configuration while passing timing and design rule checks (DRC).',
+          agent_li5: 'Related research has been submitted to a top-tier software engineering conference.',
           agent_caption: 'ECOS Agent entry points in ECOS Studio',
+          agent_repo: 'Repository ECOS Studio',
           proj1_h3: 'Open-Source AI-Aided EDA Library: AiEDA',
           proj1_meta: 'Jul 2024 - Present · Peng Cheng Laboratory Project · Core Developer',
           proj1_li1:
@@ -592,7 +602,7 @@
             'Address: University of Chinese Academy of Sciences (Yanqi Lake Campus), Huaibei Town, Huairou District, Beijing; Shenzhen University of Advanced Technology (Mingzhu Campus), Guangming District, Shenzhen, Guangdong.',
           footer_text: '© 2026 Yihang Qiu. Last updated: November 25, 2026.',
           avatar_alt: 'Portrait of Yihang Qiu',
-          agent_fig_alt: 'ECOS Agent Get Started panel with options for the GCD example, a custom RTL-to-GDS flow, and optimization of an existing design',
+          agent_fig_alt: 'ECOS Studio home screen with the ECOS Agent panel for the GCD example, a custom RTL-to-GDS flow, and optimization of an existing design',
           proj1_fig1_alt: 'AiEDA framework diagram',
           proj1_fig2_alt: 'Vectorized data visualization based on AiEDA',
           proj2_fig1_alt: 'iEDA framework diagram',
